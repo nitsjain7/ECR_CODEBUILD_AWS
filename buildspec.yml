@@ -23,7 +23,7 @@ phases:
       - echo Pushing the Docker images...
       - echo $REPOSITORY_URI:$IMAGE_TAG
       - echo $REPOSITORY_URI
-      - docker push 770177171660.dkr.ecr.us-east-2.amazonaws.com/new-repo
+      - docker push $REPOSITORY_URI
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"demo-service","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
